@@ -14,18 +14,18 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --no-scripts
 
-COPY package.json package-lock.json index.html ./
-RUN npm ci --ignore-platform && npm run build
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-platform
 
 COPY . .
 
-RUN composer install --no-dev --prefer-dist --no-interaction --no-progress \
+RUN npm run build \
+    && composer install --no-dev --prefer-dist --no-interaction --no-progress \
     && php artisan storage:link \
-    && chmod -R 775 storage bootstrap/cache
-
-RUN php artisan config:cache \
+    && php artisan config:cache \
     && php artisan route:cache \
-    && php artisan view:cache
+    && php artisan view:cache \
+    && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
 
