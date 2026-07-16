@@ -21,6 +21,7 @@ COPY . .
 
 RUN npm run build \
     && composer install --no-dev --prefer-dist --no-interaction --no-progress \
+    && cp .env.example .env \
     && touch database/database.sqlite \
     && php artisan key:generate --force \
     && php artisan storage:link \
