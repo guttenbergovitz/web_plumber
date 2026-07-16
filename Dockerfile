@@ -14,8 +14,8 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --no-scripts
 
-COPY package.json vite.config.js ./
-RUN npm install --no-optional && npm run build
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-platform && npm run build
 
 COPY . .
 
