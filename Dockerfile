@@ -14,7 +14,7 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --no-scripts
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json index.html ./
 RUN npm ci --ignore-platform && npm run build
 
 COPY . .
