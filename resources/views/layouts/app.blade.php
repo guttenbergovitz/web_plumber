@@ -119,17 +119,21 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            font-size: var(--fs-body);
-            font-weight: 600;
+            font-size: var(--fs-h3);
+            font-weight: 700;
             color: var(--green);
             text-decoration: none;
+            letter-spacing: -0.02em;
         }
         .logo:hover { color: var(--green); }
         .logo-icon {
-            width: 1.7rem; height: 1.7rem;
+            width: 2rem; height: 2rem;
             border: 2px solid var(--green);
             border-radius: 50%;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
