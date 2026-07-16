@@ -250,7 +250,7 @@
 <section id="services">
     <div class="section-header section-header-orange"><span class="prefix">&gt;</span> {{ __('Services') }}</div>
     <div class="grid-3">
-        @foreach(config('services') as $s)
+        @foreach(config('plumber-services') as $s)
         <a href="{{ route('services.detail', $s['slug']) }}" class="card" style="text-decoration:none;color:inherit;display:block">
             <h3 style="font-family:var(--font-mono);font-size:1.1rem">{{ $s['icon'] }} {{ $s['title'] }}</h3>
             <p>{{ $s['short'] }}</p>

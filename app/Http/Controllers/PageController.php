@@ -15,14 +15,14 @@ class PageController extends Controller
 
     public function services(): Response
     {
-        $services = config('services');
+        $services = config('plumber-services');
 
         return response()->view('pages.services', compact('services'));
     }
 
     public function serviceDetail(string $slug): Response
     {
-        $services = config('services');
+        $services = config('plumber-services');
         $service = collect($services)->firstWhere('slug', $slug);
 
         if (!$service) {
