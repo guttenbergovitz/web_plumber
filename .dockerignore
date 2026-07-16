@@ -1,5 +1,6 @@
 .env
-.env.*
+.env.backup
+.env.local
 .git
 .gitignore
 .gitattributes

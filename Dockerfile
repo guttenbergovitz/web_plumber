@@ -14,20 +14,18 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --no-scripts
 
-COPY package.json package-lock.json vite.config.js ./
-RUN npm ci --no-optional && npm run build
+COPY package.json vite.config.js ./
+RUN npm install --no-optional && npm run build
 
 COPY . .
 
-RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --no-scripts \
+RUN composer install --no-dev --prefer-dist --no-interaction --no-progress \
     && php artisan storage:link \
     && chmod -R 775 storage bootstrap/cache
 
-COPY .env.production .env
 RUN php artisan config:cache \
     && php artisan route:cache \
-    && php artisan view:cache \
-    && rm .env
+    && php artisan view:cache
 
 EXPOSE 8080
 
