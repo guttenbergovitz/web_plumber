@@ -798,29 +798,28 @@
     </footer>
 
     <script>
-        const totalSlides = {{ count($slides) }};
         let currentSlide = 0;
         let autoTimer;
 
         function showSlide(idx) {
-            document.querySelectorAll('.motd-slide').forEach(el => {
-                el.classList.remove('active', 'motd-slide-enter');
-            });
-            document.querySelectorAll('.motd-dot').forEach(el => el.classList.remove('active'));
-            const slide = document.querySelector(`.motd-slide[data-index="${idx}"]`);
-            const dot = document.querySelectorAll('.motd-dot')[idx];
-            if (slide) { slide.classList.add('active', 'motd-slide-enter'); }
-            if (dot) dot.classList.add('active');
+            const slides = document.querySelectorAll('.motd-slide');
+            const dots = document.querySelectorAll('.motd-dot');
+            if (idx < 0) idx = slides.length - 1;
+            if (idx >= slides.length) idx = 0;
+            slides.forEach(el => el.classList.remove('active', 'motd-slide-enter'));
+            dots.forEach(el => el.classList.remove('active'));
+            slides[idx]?.classList.add('active', 'motd-slide-enter');
+            dots[idx]?.classList.add('active');
             currentSlide = idx;
         }
 
-        function nextSlide() { showSlide((currentSlide + 1) % totalSlides); resetAuto(); }
-        function prevSlide() { showSlide((currentSlide - 1 + totalSlides) % totalSlides); resetAuto(); }
+        function nextSlide() { showSlide(currentSlide + 1); resetAuto(); }
+        function prevSlide() { showSlide(currentSlide - 1); resetAuto(); }
         function goToSlide(idx) { showSlide(idx); resetAuto(); }
 
         function resetAuto() {
             clearInterval(autoTimer);
-            autoTimer = setInterval(() => nextSlide(), 7000);
+            autoTimer = setInterval(nextSlide, 7000);
         }
         resetAuto();
 
