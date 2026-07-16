@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class WelcomeController extends Controller
 {
     public function index()
@@ -19,7 +17,7 @@ class WelcomeController extends Controller
             ],
             [
                 'text' => __('Let\'s not go to Camelot. It is a silly place.'),
-                'author' => __('Python'),
+                'author' => 'Monty Python',
             ],
             [
                 'text' => __('We don\'t make mistakes, we have happy little accidents.'),
@@ -51,8 +49,10 @@ class WelcomeController extends Controller
             ],
         ];
 
+        $fortunes = $quotes;
+
         $quote = $quotes[array_rand($quotes)];
 
-        return view('welcome', compact('quote'));
+        return view('welcome', compact('quote', 'fortunes'));
     }
 }
