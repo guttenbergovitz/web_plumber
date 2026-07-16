@@ -1,0 +1,81 @@
+<?php
+
+return [
+    [
+        'name' => 'PHP',
+        'version' => '8.3',
+        'exp' => 25,
+        'note' => 'Od PHP 4 do 8.3 — przeszedlismy te droge. Wspolczesny PHP to typy, enums, fibry, JIT. To nie ten sam jezyk co 10 lat temu.',
+        'tags' => ['Laravel', 'Symfony', 'Drupal', 'WordPress'],
+    ],
+    [
+        'name' => 'WordPress',
+        'version' => '6.x',
+        'exp' => 20,
+        'note' => 'WordPress to nie tylko blog. Block Editor, REST API, Headless CMS, WooCommerce. Szanujemy, bo dziala na 40% internetu.',
+        'tags' => ['CMS', 'WooCommerce', 'ACF', 'Gutenberg', 'Headless'],
+    ],
+    [
+        'name' => 'PrestaShop',
+        'version' => '8.x',
+        'exp' => 15,
+        'note' => 'Solidne e-commerce pod PHP. Znamy od podszewki: moduly, migracje, wydajnosc, integracje z bramkami platnosci.',
+        'tags' => ['e-commerce', 'moduly', 'migracje', 'API'],
+    ],
+    [
+        'name' => 'OpenCart',
+        'version' => '4.x',
+        'exp' => 15,
+        'note' => 'Lekki, prosty, dziala. Czesto niedoceniany, ale dla mniejszych sklepow to czesto najlepszy wybor.',
+        'tags' => ['e-commerce', 'wtyczki', 'optymalizacja', 'migracje'],
+    ],
+    [
+        'name' => 'Symfony',
+        'version' => '7.x',
+        'exp' => 18,
+        'note' => 'Od Symfony 1.4 do 7.x. Framework, ktory zdefiniowal nowoczesne PHP. Flex, Messenger, Serializer, Security — caly ekosystem.',
+        'tags' => ['Flex', 'Messenger', 'Doctrine', 'API Platform'],
+    ],
+    [
+        'name' => 'Laravel',
+        'version' => '12.x',
+        'exp' => 14,
+        'note' => 'Od Laravel 4 do 12. Elegancki, wydajny, z ogromnym ekosystemem. Livewire, Horizon, Octane, Reverb — cala rodzina.',
+        'tags' => ['Eloquent', 'Livewire', 'Horizon', 'Octane', 'Reverb'],
+    ],
+    [
+        'name' => 'Python',
+        'version' => '3.13',
+        'exp' => 22,
+        'note' => 'Od Python 2.4 do 3.13. Wspolczesny Python to typy, async, pattern matching. Uzywamy do API, skryptow, data, AI.',
+        'tags' => ['Django', 'Flask', 'FastAPI', 'Wagtail'],
+    ],
+    [
+        'name' => 'Wagtail',
+        'version' => '6.x',
+        'exp' => 10,
+        'note' => 'Pythonowy CMS, ktory lapie zloty srodek miedzy wygoda a kontrola. StreamField, GraphQL, wielojezycznosc.',
+        'tags' => ['CMS', 'StreamField', 'GraphQL', 'Wielojezycznosc'],
+    ],
+    [
+        'name' => 'Java / Spring',
+        'version' => 'Spring Boot 3.x',
+        'exp' => 22,
+        'note' => 'Od J2EE XML-owych potworow do Spring Boot 3 z GraalVM i reactive stack. Spring to nie twoj stary Java — to nowoczesny, szybki ekosystem.',
+        'tags' => ['Spring Boot', 'JPA', 'Security', 'Cloud', 'GraalVM'],
+    ],
+    [
+        'name' => 'Ruby on Rails',
+        'version' => '8.x',
+        'exp' => 18,
+        'note' => 'Rails to konwencja ponad konfiguracja. Od Rails 2 do 8 — Hotwire, Stimulus, Solid Queue. Wciaz jeden z najbardziej produktywnych frameworkow.',
+        'tags' => ['Rails', 'Hotwire', 'Stimulus', 'Solid Queue'],
+    ],
+    [
+        'name' => 'PostgreSQL',
+        'version' => '17',
+        'exp' => 25,
+        'note' => 'Od Postgres 7 do 17. To nie jest "zwykla baza". JSONB, PARTITION, logical replication, extensions. Prawdziwy kombajn.',
+        'tags' => ['SQL', 'PL/pgSQL', 'administracja', 'wydajnosc'],
+    ],
+];

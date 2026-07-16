@@ -1,38 +1,88 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Third Party Services
-    |--------------------------------------------------------------------------
-    |
-    | This file is for storing the credentials for third party services such
-    | as Mailgun, Postmark, AWS and more. This file provides the de facto
-    | location for this type of information, allowing packages to have
-    | a conventional file to locate the various service credentials.
-    |
-    */
-
-    'postmark' => [
-        'key' => env('POSTMARK_API_KEY'),
-    ],
-
-    'resend' => [
-        'key' => env('RESEND_API_KEY'),
-    ],
-
-    'ses' => [
-        'key' => env('AWS_ACCESS_KEY_ID'),
-        'secret' => env('AWS_SECRET_ACCESS_KEY'),
-        'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-    ],
-
-    'slack' => [
-        'notifications' => [
-            'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
-            'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
+    [
+        'slug' => 'audyt',
+        'icon' => '{  }',
+        'title' => 'Audyt kodu i infrastruktury',
+        'short' => 'Prześwietlimy Twój kod, bazę i infrastrukturę. Powiemy co jest naprawdę złe, a co tylko wygląda.',
+        'body' => 'Nie wierzysz konsultantom, którzy mówią "trzeba przepisać od zera"? Dobrze. My robimy audyt, który oddziela fakty od opinii. Przechodzimy przez kod, bazę danych, konfigurację serwera, pipeline\'y. Dostajesz raport z konkretnymi priorytetami: co jest realnym zagrożeniem, co obniża wydajność, co można naprawić w godzinę, a co wymaga miesiąca. Zero sprzedaży, zero FOMO.',
+        'process' => [
+            'Zbieramy dane: kod, logi, metryki, konfiguracja',
+            'Analizujemy: bezpieczeństwo, wydajność, podatność',
+            'Raport: priorytety, koszty, szacowany czas napraw',
+            'Rekomendacje: roadmapa napraw bez przepisywania od zera',
         ],
+        'techs' => ['PHP', 'Python', 'Java', 'Ruby', 'PostgreSQL'],
     ],
-
+    [
+        'slug' => 'legacy-support',
+        'icon' => '</>',
+        'title' => 'Legacy support',
+        'short' => 'PHP 5.6? Symfony 2? Django 1.11? Ogarniemy. Nie oceniamy. Naprawiamy.',
+        'body' => 'Masz aplikację, która działa od 10 lat. Wszyscy mówią "przepisz na nowy framework". My pytamy: "po co?". Jeśli aplikacja zarabia i jest stabilna, to nie potrzebuje przepisania — potrzebuje opieki. Podbijamy wersje krok po kroku, łatamy dziury bezpieczeństwa, dodajemy testy tam gdzie ich brakuje. Robimy to bez zatrzymywania produkcji.',
+        'process' => [
+            'Inwentaryzacja: co działa, co wymaga uwagi, co boli',
+            'Plan: bezpieczne podbijanie wersji bez rewolucji',
+            'Testy: najpierw tam gdzie największe ryzyko',
+            'Monitoring: wdrożenie alertów i metryk',
+        ],
+        'techs' => ['PHP', 'Python', 'Java', 'Ruby'],
+    ],
+    [
+        'slug' => 'modernizacja',
+        'icon' => '[  ]',
+        'title' => 'Modernizacja',
+        'short' => 'Bez przepisywania od zera. Podbijamy wersje, dodajemy testy, poprawiamy wydajność.',
+        'body' => 'Modernizacja nie oznacza "wyrzuć wszystko i napisz od nowa". To proces: podbijamy wersje frameworka, wymieniamy biblioteki które skończyły support, dodajemy CI/CD, poprawiamy wydajność zapytań. Każda zmiana jest mała, odwracalna i testowalna. W efekcie masz nowoczesną aplikację — bez miesięcznego przestoju i bez ryzyka przepisanego od zera bubla.',
+        'process' => [
+            'Audyt wstępny: co wymaga modernizacji, a co może zostać',
+            'Plan: kolejność zmian, zależności, ryzyka',
+            'Modernizacja: małe kroki, każde z testami',
+            'Walidacja: porównanie wydajności przed/po',
+        ],
+        'techs' => ['PHP', 'Python', 'Java', 'Ruby'],
+    ],
+    [
+        'slug' => 'performance',
+        'icon' => '///',
+        'title' => 'Performance',
+        'short' => 'Zanim kupisz większy serwer — pokażemy Ci jak wycisnąć 2x więcej z tego co masz.',
+        'body' => 'Problemy z wydajnością rzadko wymagają większego serwera. Często to jedno źle napisane zapytanie, brak indeksu, źle skonfigurowany cache, albo zbyt agresywny ORM. Mierzymy, identyfikujemy wąskie gardła, proponujemy konkretne zmiany. Często optymalizacja jednej funkcji daje więcej niż skalowanie w pionie.',
+        'process' => [
+            'Profilowanie: identyfikacja wąskich gardeł',
+            'Analiza: zapytania, cache, konfiguracja serwera',
+            'Optymalizacja: konkretne zmiany z mierzalnym efektem',
+            'Weryfikacja: porównanie metryk przed/po',
+        ],
+        'techs' => ['PHP', 'Python', 'Java', 'Ruby', 'PostgreSQL'],
+    ],
+    [
+        'slug' => 'bezpieczenstwo',
+        'icon' => '\\\\\\',
+        'title' => 'Bezpieczeństwo',
+        'short' => 'Zabezpieczymy legacy aplikację. Nie każdy błąd wymaga przepisania.',
+        'body' => 'Bezpieczeństwo w legacy aplikacjach to nie jest sprawa "wszystko albo nic". Można zabezpieczyć starą aplikację bez przepisywania: WAF, odpowiednie nagłówki, łatanie najbardziej krytycznych podatności, audyt zależności, segmentacja sieciowa. Robimy audyt, ustalamy priorytety, wdrażamy poprawki. Twoja aplikacja będzie bezpieczniejsza jeszcze przed "wielkim przepisaniem".',
+        'process' => [
+            'Audyt: skanowanie podatności, przegląd kodu, konfiguracja',
+            'Priorytety: CVSS, realne ryzyko, koszt naprawy',
+            'Łatanie: krytyczne poprawki bez zmiany architektury',
+            'Monitoring: alerty, logi, wykrywanie włamań',
+        ],
+        'techs' => ['PHP', 'Python', 'Java', 'Ruby', 'PostgreSQL'],
+    ],
+    [
+        'slug' => 'devops-legacy',
+        'icon' => '***',
+        'title' => 'DevOps dla legacy systemów',
+        'short' => 'CI/CD, automatyzacja, monitoring — nawet na bare metalu.',
+        'body' => "DevOps nie wymaga Kubernetes. Nawet najstarsza aplikacja może mieć CI/CD, automatyczne testy, monitoring i backup. Używamy prostych narzędzi: Ansible, Bash, Docker (jeśli ma sens), PostgreSQL streaming replication. Automatyzacja nie musi być skomplikowana — musi być skuteczna. Wdrażamy to, co ma sens dla Twojego stacka, bez hype'u.",
+        'process' => [
+            'Audyt: obecna infrastruktura, pipeline, backup',
+            'CI/CD: Github Actions / Gitlab CI dla istniejącego stacka',
+            'Monitoring: Prometheus + Grafana lub prostsze rozwiązania',
+            'Dokumentacja: żeby następny inżynier nie musiał zgadywać',
+        ],
+        'techs' => ['PHP', 'Python', 'Java', 'Ruby', 'PostgreSQL'],
+    ],
 ];
