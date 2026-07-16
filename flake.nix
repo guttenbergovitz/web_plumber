@@ -8,7 +8,9 @@
   outputs = { self, nixpkgs }: let
     system = "aarch64-darwin";
     pkgs = nixpkgs.legacyPackages.${system};
+    shell = import ./shell.nix { inherit pkgs; };
   in {
-    devShells.${system}.default = import ./shell.nix { inherit pkgs; };
+    devShells.${system}.default = shell;
+    packages.${system}.default = shell;
   };
 }
