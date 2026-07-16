@@ -1,7 +1,7 @@
 FROM dunglas/frankenphp:1.4-alpine AS base
 
 RUN install-php-extensions \
-    pdo pdo_pgsql pgsql intl bcmath ctype curl dom fileinfo \
+    pdo pdo_pgsql pgsql pdo_sqlite sqlite3 intl bcmath ctype curl dom fileinfo \
     gd iconv mbstring opcache pcntl session tokenizer xml zip
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
