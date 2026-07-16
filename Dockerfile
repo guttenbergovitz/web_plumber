@@ -33,7 +33,6 @@ RUN npm run build \
 EXPOSE 8080
 
 ENV SERVER_NAME=:8080
-ENV FRANKENPHP_CONFIG="worker ./public/index.php"
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 
