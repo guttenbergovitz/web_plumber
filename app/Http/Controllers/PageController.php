@@ -41,4 +41,9 @@ class PageController extends Controller
     {
         return response()->view('pages.problem');
     }
+
+    public function aiReality(): Response
+    {
+        return response()->view('pages.ai-reality');
+    }
 }

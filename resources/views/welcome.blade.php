@@ -281,15 +281,19 @@
 </section>
 
 <section id="ai-llm">
-    <div class="section-header"><span class="prefix">$</span> echo "AI / LLM"</div>
-    <div class="card" style="margin-bottom:1.5rem">
-        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);margin-bottom:0.75rem">
+    <div class="section-header section-header-orange"><span class="prefix">&gt;</span> {{ __('AI / LLM') }}</div>
+    <div style="border: 2px solid var(--orange); border-radius: var(--radius); padding: 2rem; background: rgba(218, 112, 44, 0.04); margin-bottom:1.5rem">
+        <p style="font-size:var(--fs-h3);line-height:var(--lh-loose);margin-bottom:1rem;font-weight:600;color:var(--orange)">
+            {{ __('My: Sprawdzone fundamenty + AI jako turbo.') }}<br>
+            <span style="color:var(--text);font-size:var(--fs-body);font-weight:400">{{ __('Nie samo AI.') }}</span>
+        </p>
+        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);margin-bottom:1rem;color:var(--text-secondary)">
+            {{ __('AI nie napisze Ci dobrego monolitu. Nie ogarnie legacy. Nie zna kontekstu Twojego kodu. My znamy — i łączymy to z AI.') }}
+        </p>
+        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);color:var(--text)">
             <strong style="color:var(--orange)">{{ __('AI to najfajniejsza zabawka od chleba z masłem.') }}</strong>
             <br>
-            {{ __('Używamy jej codziennie do generowania testów, analizy kodu, dokumentacji.') }}
-        </p>
-        <p style="font-size:var(--fs-small);color:var(--text-secondary);line-height:var(--lh-body)">
-            {{ __('Ale AI nie napisze Ci dobrego monolitu. Nie ogarnie legacy. My łączymy: sprawdzone fundamenty + AI jako turbo.') }}
+            {{ __('Używamy jej codziennie do generowania testów, analizy kodu, dokumentacji. Ale zawsze z jurysdykcją ludzi.') }}
         </p>
     </div>
 </section>
