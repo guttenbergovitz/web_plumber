@@ -63,6 +63,25 @@
             --orange-glow: rgba(188, 82, 16, 0.06);
         }
 
+        [data-theme="boomer"] {
+            --bg: #FFFFFF;
+            --bg-surface: #F5F5F5;
+            --bg-hover: #EEEEEE;
+            --text: #000000;
+            --text-secondary: #333333;
+            --text-tertiary: #666666;
+            --border: #CCCCCC;
+            --green: #000000;
+            --orange: #000000;
+            --blue: #000000;
+            --red: #000000;
+            --cyan: #000000;
+            --purple: #000000;
+            --yellow: #000000;
+            --green-glow: transparent;
+            --orange-glow: transparent;
+        }
+
         body {
             font-family: var(--font-mono);
             background: var(--bg);
@@ -85,6 +104,11 @@
             background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
             pointer-events: none;
             z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+        [data-theme="boomer"] body::before {
+            opacity: 0;
         }
         body::after {
             content: '';
@@ -94,6 +118,10 @@
             pointer-events: none;
             z-index: 9998;
             opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        [data-theme="boomer"] body::after {
+            opacity: 0;
         }
 
         h1 { font-size: var(--fs-hero); line-height: var(--lh-tight); font-weight: 700; }
@@ -355,7 +383,7 @@
                 <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() === 'en' ? 'active' : '' }}">en</a>
                 <a href="{{ route('lang.switch', 'de') }}" class="{{ app()->getLocale() === 'de' ? 'active' : '' }}">de</a>
             </li>
-            <li><button class="theme-toggle" onclick="toggleTheme()">~$ theme</button></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">~$ theme</button></li>
         </ul>
     </nav>
 
@@ -380,7 +408,13 @@
     <script>
     function toggleTheme() {
         var html = document.documentElement;
-        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        var current = html.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : current === 'light' ? 'boomer' : 'dark';
+        html.setAttribute('data-theme', next);
+        var btn = document.getElementById('themeBtn');
+        if (btn) {
+            btn.textContent = next === 'boomer' ? '~$ boomer' : '~$ theme';
+        }
     }
     @stack('scripts')
     </script>
