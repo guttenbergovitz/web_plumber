@@ -344,6 +344,7 @@
             <li><a href="{{ route('problem') }}" class="{{ request()->routeIs('problem') ? 'active' : '' }}">{{ __('Problem') }}</a></li>
             <li><a href="{{ route('services') }}" class="{{ request()->routeIs('services*') ? 'active' : '' }}">{{ __('Services') }}</a></li>
             <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">{{ __('About') }}</a></li>
+            <li><a href="{{ route('ai-reality') }}" class="{{ request()->routeIs('ai-reality') ? 'active' : '' }}">{{ __('AI Reality') }}</a></li>
             @if(request()->routeIs('home'))
             <li><a href="#contact">{{ __('Contact') }}</a></li>
             @else

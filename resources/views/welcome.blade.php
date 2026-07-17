@@ -282,19 +282,24 @@
 
 <section id="ai-llm">
     <div class="section-header section-header-orange"><span class="prefix">&gt;</span> {{ __('AI / LLM') }}</div>
-    <div style="border: 2px solid var(--orange); border-radius: var(--radius); padding: 2rem; background: rgba(218, 112, 44, 0.04); margin-bottom:1.5rem">
-        <p style="font-size:var(--fs-h3);line-height:var(--lh-loose);margin-bottom:1rem;font-weight:600;color:var(--orange)">
+    <div style="border: 3px solid var(--orange); border-radius: var(--radius); padding: 2.5rem; background: rgba(218, 112, 44, 0.06); margin-bottom:2rem; box-shadow: 0 0 20px rgba(218, 112, 44, 0.15)">
+        <p style="font-size:1.3rem;line-height:var(--lh-loose);margin-bottom:1.5rem;font-weight:700;color:var(--orange)">
             {{ __('My: Sprawdzone fundamenty + AI jako turbo.') }}<br>
-            <span style="color:var(--text);font-size:var(--fs-body);font-weight:400">{{ __('Nie samo AI.') }}</span>
+            <span style="color:var(--text);font-size:1rem;font-weight:500">{{ __('Nie samo AI.') }}</span>
         </p>
-        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);margin-bottom:1rem;color:var(--text-secondary)">
+        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);margin-bottom:1.5rem;color:var(--text-secondary)">
             {{ __('AI nie napisze Ci dobrego monolitu. Nie ogarnie legacy. Nie zna kontekstu Twojego kodu. My znamy — i łączymy to z AI.') }}
         </p>
-        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);color:var(--text)">
+        <p style="font-size:var(--fs-body);line-height:var(--lh-loose);margin-bottom:1.5rem;color:var(--text)">
             <strong style="color:var(--orange)">{{ __('AI to najfajniejsza zabawka od chleba z masłem.') }}</strong>
             <br>
             {{ __('Używamy jej codziennie do generowania testów, analizy kodu, dokumentacji. Ale zawsze z jurysdykcją ludzi.') }}
         </p>
+        <div style="margin-top:1.5rem">
+            <a href="{{ route('ai-reality') }}" style="display:inline-block;border:2px solid var(--orange);color:var(--orange);padding:0.6rem 1.5rem;border-radius:var(--radius);text-decoration:none;font-weight:600;transition:all 0.25s">
+                {{ __('Czytaj więcej') }} →
+            </a>
+        </div>
     </div>
 </section>
 
